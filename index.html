@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Generador de Qr y CB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.min.js"></script>
+    <script src="src/scripts/script.js"></script>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top mb-5" data-bs-theme="dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#div_qr">QR</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#div_cb">Codigo de Barras</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div id="div_qr" class="mt-5">
+            <div>
+                <h1 class="container text-center mb-3">QR</h1>
+            </div>
+            <div class="container" id="contenedor-qr">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input class="form-control" type="text" name="inp_url" id="inp_url" value="https://getbootstrap.com/">        
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-primary" id="btn_aceptar">ACEPTAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-md max-auto p-5">
+                            <canvas id="qrCodeCanvas" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="container">
+                            Los códigos QR, abreviatura de "Quick Response" o "Respuesta Rápida" en español, 
+                            son códigos de barras bidimensionales que contienen información que puede ser escaneada y leída por dispositivos como teléfonos inteligentes
+                        </p>
+                        <p class="container">
+                            Longitud y capacidad de caracteres: La cantidad de caracteres que puede contener un código QR varía según la versión del código QR y el tipo de datos que se codifiquen. En general, 
+                            los códigos QR pueden contener hasta varios miles de caracteres alfanuméricos, lo que los hace útiles para almacenar URL, información de contacto, texto sin formato o incluso datos binarios.
+                        </p>
+                        <p>
+                            Usos y aplicaciones
+                            <ul>
+                                <li>Enlaces web</li>
+                                <li>Información de contacto</li>
+                                <li>Pagos móviles</li>
+                                <li>Publicidad y marketing</li>
+                                <li>Gestión de inventario</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Funcionamiento: La información dentro de un código QR se almacena en forma de patrones de cuadrados blancos y negros en un fondo cuadrado. 
+                            Cuando se escanea el código, un dispositivo interpreta estos patrones y extrae la información codificada, ya sea una URL, texto, información de contacto, etc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="div_cb" class="mt-5">
+            <div>
+                <h1 class="container text-center mb-3">Codigo de Barras</h1>
+            </div>
+            <div class="container" id="contenedor-qr">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            Los códigos de barras son representaciones gráficas de datos que se utilizan para identificar y rastrear productos, activos, documentos y más.
+                        </p>
+                        <p>
+                            Longitud y capacidad de caracteres: La cantidad de caracteres que puede contener un código de barras depende del tipo de código utilizado. Algunos códigos de barras, como el UPC-A (Universal Product Code) que se usa comúnmente en productos de consumo, pueden contener hasta 12 dígitos numéricos. Otros códigos de barras, como el Code 128, pueden contener caracteres alfanuméricos y llegar hasta cientos de caracteres.
+                        </p>
+                        <p>
+                            Usos y aplicaciones: Los códigos de barras son ampliamente utilizados en diversos sectores, incluyendo:
+                            <ul>
+                                <li>Ventas al por menor</li>
+                                <li>Logística y distribución</li>
+                                <li>Control de activos</li>
+                                <li>Seguimiento de servicios</li>
+                                <li>Gestión de bibliotecas</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Funcionamiento: Un código de barras consta de barras y espacios de diferentes anchos que representan números o caracteres. Estos códigos son leídos por dispositivos ópticos, como escáneres de código de barras, que interpretan las barras y espacios para obtener la información codificada.
+                        </p>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input class="form-control" type="text" name="inp_url_cb" id="inp_url_cb" value="ABC-abc-123">        
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-primary" id="btn_aceptar_cb">ACEPTAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-md max-auto p-5">
+                            <img id="cbCodeCanvas"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
